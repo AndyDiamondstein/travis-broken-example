@@ -35,6 +35,6 @@ before_install:
 install:
   - if [[ "$TRAVIS_PHP_VERSION" == "5.4" ]]; then composer remove --dev cache/filesystem-adapter; fi
   - composer install
-  - composer require google/apiclient-services:^0.7
+  - composer require google/apiclient-services:^0.8
 
 script: phpunit YouTubeDataApi.php
