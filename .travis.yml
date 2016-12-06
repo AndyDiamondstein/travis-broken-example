@@ -7,6 +7,11 @@ env:
   global:
     - MEMCACHE_HOST=127.0.0.1
     - MEMCACHE_PORT=11211
+  matrix:
+    - GUZZLE_VERSION=~5.2
+    - GUZZLE_VERSION=~6.0
+
+sudo: false
     
 cache:
   directories:
@@ -18,10 +23,18 @@ php:
   - 5.4
   - hhvm
   
+# Guzzle 6.0 is not compatible with PHP 5.4
+matrix:
+  exclude:
+    - php: 5.4
+      env: GUZZLE_VERSION=~6.0
+      
 before_install:
   - composer self-update
   
 install:
+  - if [[ "$TRAVIS_PHP_VERSION" == "5.4" ]]; then composer remove --dev cache/filesystem-adapter; fi
   - composer install
   - composer require google/apiclient:^2.0.0
+
 script: phpunit YouTubeDataApi.php
