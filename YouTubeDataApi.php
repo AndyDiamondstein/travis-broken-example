@@ -7,7 +7,7 @@ require_once realpath('vendor/autoload.php');
 $r = set_include_path(get_include_path() . PATH_SEPARATOR . '\google-api-php-client-master\src');
 echo $r;
 
-if ($handle = opendir('.')) {
+if ($handle = opendir('vendor/')) {
 
     while (false !== ($entry = readdir($handle))) {
 
