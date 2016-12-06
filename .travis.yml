@@ -3,4 +3,7 @@ php:
   - 5.5
   - 5.4
   - hhvm
+install:
+  - composer install
+  - composer require google/apiclient:^2.0.0
 script: phpunit YouTubeDataApi.php
