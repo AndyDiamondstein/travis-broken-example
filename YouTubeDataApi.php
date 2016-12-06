@@ -6,7 +6,7 @@
 require_once realpath('vendor/autoload.php');
 require_once realpath('vendor/google/apiclient/src/Google/Client.php');
 
-if ($handle = opendir('vendor/google/apiclient/src/Google/')) {
+if ($handle = opendir('vendor/google/apiclient/src/Google/Service/')) {
 
     while (false !== ($entry = readdir($handle))) {
 
