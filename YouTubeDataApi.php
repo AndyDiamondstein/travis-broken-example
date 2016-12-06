@@ -4,7 +4,7 @@
 
 // Call set_include_path() as needed to point to your client library.
 require_once 'vendor/autoload.php';
-require_once 'src/Google/Client.php';
+require_once 'vendor/Client.php';
 //require_once 'Google/Service/YouTube.php';
 session_start();
 
