@@ -3,11 +3,11 @@
 // Sample PHP code for user authorization
 
 // Call set_include_path() as needed to point to your client library.
-require_once 'vendor/autoload.php';
+require_once realpath('vendor/autoload.php');
 $r = set_include_path(get_include_path() . PATH_SEPARATOR . '\google-api-php-client-master\src');
 echo $r;
-require_once 'Google/Client.php';
-require_once 'Google/Service/YouTube.php';
+//require_once 'Google/Client.php';
+//require_once 'Google/Service/YouTube.php';
 session_start();
 
 /*
