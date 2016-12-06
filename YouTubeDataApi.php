@@ -17,7 +17,7 @@ $OAUTH2_CLIENT_ID = 'REPLACE_ME';
 $OAUTH2_CLIENT_SECRET = 'REPLACE_ME';
 define('CREDENTIALS_PATH', '~/php-yt-oauth2.json');
 
-function getClient() {
+fonction getClient() {
   $client = new Google_Client();
   $client->setAuthConfigFile('client_secrets.json');
   $client->addScope(GOOGLE_SERVICE_YOUTUBE::YOUTUBE_FORCE_SSL);
