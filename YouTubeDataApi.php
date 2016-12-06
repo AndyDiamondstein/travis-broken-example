@@ -6,6 +6,19 @@
 require_once realpath('vendor/autoload.php');
 $r = set_include_path(get_include_path() . PATH_SEPARATOR . '\google-api-php-client-master\src');
 echo $r;
+
+if ($handle = opendir('.')) {
+
+    while (false !== ($entry = readdir($handle))) {
+
+        if ($entry != "." && $entry != "..") {
+
+            echo "$entry\n";
+        }
+    }
+
+    closedir($handle);
+}
 //require_once 'Google/Client.php';
 //require_once 'Google/Service/YouTube.php';
 //session_start();
