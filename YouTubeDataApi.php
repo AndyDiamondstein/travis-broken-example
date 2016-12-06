@@ -5,12 +5,8 @@
 // Call set_include_path() as needed to point to your client library.
 require_once realpath('vendor/autoload.php');
 require_once realpath('vendor/google/apiclient/src/Google/Client.php');
-require_once realpath('vendor/google/apiclient/src/Google/Service/YouTube.php');
 
-$r = set_include_path(get_include_path() . PATH_SEPARATOR . '\google-api-php-client-master\src');
-echo $r;
-
-if ($handle = opendir('vendor/google/apiclient/src/')) {
+if ($handle = opendir('vendor/google/apiclient/src/Google/')) {
 
     while (false !== ($entry = readdir($handle))) {
 
@@ -22,6 +18,12 @@ if ($handle = opendir('vendor/google/apiclient/src/')) {
 
     closedir($handle);
 }
+
+require_once realpath('vendor/google/apiclient/src/Google/Service/YouTube.php');
+
+$r = set_include_path(get_include_path() . PATH_SEPARATOR . '\google-api-php-client-master\src');
+echo $r;
+
 //require_once 'Google/Client.php';
 //require_once 'Google/Service/YouTube.php';
 //session_start();
