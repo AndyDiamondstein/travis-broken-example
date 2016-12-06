@@ -8,7 +8,7 @@ $r = set_include_path(get_include_path() . PATH_SEPARATOR . '\google-api-php-cli
 echo $r;
 //require_once 'Google/Client.php';
 //require_once 'Google/Service/YouTube.php';
-session_start();
+//session_start();
 
 /*
  * Set $DEVELOPER_KEY to the "API key" value from the "Access" tab of the
