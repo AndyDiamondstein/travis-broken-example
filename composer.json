@@ -11,5 +11,5 @@
     },
     "suggest": {
         "cache/filesystem-adapter": "For caching certs and tokens (using Google_Client::setCache)"
-    },
+    }
 }
