@@ -1,8 +1,26 @@
 language: php
+
+services:
+  - memcached
+  
+env:
+  global:
+    - MEMCACHE_HOST=127.0.0.1
+    - MEMCACHE_PORT=11211
+    
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+
 php:
   - 5.5
   - 5.4
   - hhvm
+  
+before_install:
+  - composer self-update
+  
 install:
   - composer install
   - composer require google/apiclient:^2.0.0
